@@ -4,6 +4,9 @@ import './App.css';
 import AppNavbar from './components/AppNavbar';
 import ShopingList from './components/ShopingList';
 
+import {Provider} from 'react-redux';
+import store from './store';
+
 
 function App() {
   return (
