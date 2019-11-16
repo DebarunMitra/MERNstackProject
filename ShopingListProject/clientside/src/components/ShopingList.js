@@ -6,10 +6,9 @@ import {
   Button
 } from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import uuid from 'uuid';
 
 import {connect} from 'react-redux';
-import {getItems} from '../actions/itemActions';
+import {getItems,deleteItem} from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 
@@ -46,7 +45,7 @@ componentDidMount(){
                   size="sm"
                   onClick={()=>{
                     this.setState(state=>({
-                      items:state.items.filter(item=>item.id!==id)
+                      items:state.items.filter(item=>item.id!==action.payload
                     }))
                   }}>&times;</Button>{name}
                   </ListGroupItem>
@@ -68,4 +67,4 @@ ShopingList.propTypes={
 const mapStateToProps=(state)=>({
   item:state.item
 });
-export default connect(mapStateToProps,{getItems})(ShopingList);
+export default connect(mapStateToProps,{getItems,deleteItem})(ShopingList);
