@@ -18,22 +18,15 @@ componentDidMount(){
   this.props.getItems();
 }
 
-
+onDeleteClick=(id)=>{
+  this.props.deleteItem(id);
+}
 
   render(){
     const { items } = this.props.item;
     return (
       <Container>
-        <Button color="dark"
-          style={{marginBottom:'2rem'}}
-          onClick={()=>{
-            const name=prompt('Enter Item');
-            if(name){
-              this.setState(state=>({
-                items:[...state.items,{id:uuid(),name:name}]
-              }));
-            }
-          }}>Add Items</Button>
+      
           <ListGroup>
             <TransitionGroup className="shoping list">
             {items.map(({id,name})=>(
@@ -43,11 +36,7 @@ componentDidMount(){
                   className="remove-btn"
                   color="danger"
                   size="sm"
-                  onClick={()=>{
-                    this.setState(state=>({
-                      items:state.items.filter(item=>item.id!==action.payload
-                    }))
-                  }}>&times;</Button>{name}
+                  onClick={this.onDeleteClick.bind(this, id)}>&times;</Button>{name}
                   </ListGroupItem>
               </CSSTransition>
             ))}
