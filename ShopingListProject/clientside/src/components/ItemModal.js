@@ -12,7 +12,6 @@ import {
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
-//import uuid from 'uuid';
 
 class ItemModal extends Component {
   state = {
@@ -38,8 +37,7 @@ class ItemModal extends Component {
     e.preventDefault();
 
     const newItem = {
-      //id:uuid(),
-      name:this.state.name
+      name: this.state.name
     };
 
     // Add item via addItem action
@@ -51,18 +49,18 @@ class ItemModal extends Component {
 
   render() {
     return (
-        <div>
-          {!this.props.isAuthenticated ? (
-       <Button
-             color='dark'
-             style={{ marginBottom: '2rem' }}
-             onClick={this.toggle}
-           >
-           Add Item
-           </Button>
-          ) : (
-            <h4 className='mb-3 ml-4'>Please log in to manage items</h4>
-          )}
+      <div>
+        {this.props.isAuthenticated ? (
+          <Button
+            color='dark'
+            style={{ marginBottom: '2rem' }}
+            onClick={this.toggle}
+          >
+            Add Item
+          </Button>
+        ) : (
+          <h4 className='mb-3 ml-4'>Please log in to manage items</h4>
+        )}
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Add To Shopping List</ModalHeader>
@@ -84,14 +82,14 @@ class ItemModal extends Component {
             </Form>
           </ModalBody>
         </Modal>
-     </div>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  item: state.item
-//  isAuthenticated: state.auth.isAuthenticated
+  item: state.item,
+  isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(
