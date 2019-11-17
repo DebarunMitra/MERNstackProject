@@ -24,6 +24,3 @@ app.use('/api/users',require('./routes/api/users'));
 const port=process.env.PORT || 5020;
 //server up
 app.listen(port,()=>console.log(`Server Start At ${port} Port...`));
-/*
-$ npm run server
- */
