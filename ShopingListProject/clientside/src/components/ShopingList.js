@@ -26,7 +26,6 @@ onDeleteClick=(id)=>{
     const { items } = this.props.item;
     return (
       <Container>
-      
           <ListGroup>
             <TransitionGroup className="shoping list">
             {items.map(({id,name})=>(
