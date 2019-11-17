@@ -14,7 +14,7 @@ const User =require('../../models/User');
  router.post('/',(req,res)=>{
    const {name,email,password}=req.body;
    if(!name || !email || !password){
-     return res.status.(400).json({msg:'Please enter all fields!'});
+     return res.status(400).json({msg:'Please enter all fields!'});
    }
 
    //Check for existing user
@@ -28,7 +28,7 @@ const User =require('../../models/User');
      });
      //create salt & hash
      bcrypt.genSalt(10,(err,salt)=>{
-       bcrypt.hash(newUser,password,salt, (err,hash)={
+       bcrypt.hash(newUser.password,salt, (err,hash)=>{
          if(err) throw err;
          newUser.password=hash;
          newUser.save().then(user=>{
