@@ -61,4 +61,8 @@ test('There is no D in the team',()=>{
   expect('team').not.toMatch(/D/i);
 })
 
-//
+//array
+test('Admin should be in username',()=>{
+  username=['john','karen','admin'];
+  expect(username).toContain('admin');
+})
