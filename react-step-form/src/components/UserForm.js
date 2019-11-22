@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
+import Confirm from './Confirm';
 
 
 export class UserForm extends Component{
