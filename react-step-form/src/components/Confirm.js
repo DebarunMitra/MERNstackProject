@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import {List,ListItem} from 'material-ui/List';
 
 
 export class FormPersonalDetails extends Component{
@@ -18,28 +19,37 @@ export class FormPersonalDetails extends Component{
   }
 
   render (){
-    const {values, handleChange}=this.props;
+    const {values:{firstName,lastName,email,occupation,city,bio}}=this.props;
     return (
       <MuiThemeProvider>
           <React.Fragment>
-            <AppBar title="Enter Personal Details" />
-            <TextField hintText="Enter Your City Name"
-              floatingLabelText="City Name"
-              onChange={handleChange('city')}
-              defaultValue={values.city}
-             />
-             <br/>
-             <TextField hintText="Enter Your Occupation"
-               floatingLabelText="Occupation"
-               onChange={handleChange('occupation')}
-               defaultValue={values.occupation}
-              />
-              <br/>
-              <TextField hintText="Enter Your Bio"
-                floatingLabelText="Bio"
-                onChange={handleChange('bio')}
-                defaultValue={values.bio}
-               />
+            <AppBar title="Confirm Your Details" />
+              <List>
+                <ListItem
+                  primaryText="First Name"
+                  secondaryText={firstName}
+                 />
+                 <ListItem
+                   primaryText="Last Name"
+                   secondaryText={lastName}
+                  />
+                  <ListItem
+                    primaryText="Email"
+                    secondaryText={email}
+                   />
+                   <ListItem
+                     primaryText="City Name"
+                     secondaryText={city}
+                    />
+                    <ListItem
+                      primaryText="Occupation"
+                      secondaryText={occupation}
+                     />
+                     <ListItem
+                       primaryText="Bio"
+                       secondaryText={bio}
+                      />
+              </List>
                <br/>
                <RaisedButton
                   label="Back"
@@ -48,7 +58,7 @@ export class FormPersonalDetails extends Component{
                   onClick={this.back}
                 />
                <RaisedButton
-                  label="Continue"
+                  label="Confirm & Continue"
                   primary={true}
                   style={styles.button}
                   onClick={this.continue}
