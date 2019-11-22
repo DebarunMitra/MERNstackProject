@@ -69,13 +69,9 @@ handleChange=input=>e=>{
         )
       case 4:
         return <Success />
+      default:
+        return <h1>Somthing goes wrong</h1>
     }
-
-    return (
-      <div>
-
-      </div>
-    )
   }
 }
 
