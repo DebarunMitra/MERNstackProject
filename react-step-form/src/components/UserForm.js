@@ -1,4 +1,5 @@
-import React, {component} from 'react';
+import React, {Component} from 'react';
+import FormUserDetails from './FormUserDetails';
 
 export class UserForm extends Component{
   state={
@@ -15,14 +16,14 @@ export class UserForm extends Component{
   nextStep=()=>{
     const {step} =this.state;
     this.setState({
-      step:step+1;
+      step:step+1
     });
   }
   //proceed to previous step
   prevStep=()=>{
     const {step} =this.state;
     this.setState({
-      step:step-1;
+      step:step-1
     });
   }
 
