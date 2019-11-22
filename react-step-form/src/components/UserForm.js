@@ -45,6 +45,12 @@ handleChange=input=>e=>{
             values={values}
           />
         )
+      case 2:
+        return <h1>Form personal Details</h1>
+      case 3:
+        return <h1>Confirm</h1>
+      case 4:
+        return <h1>Success</h1>
     }
 
     return (
