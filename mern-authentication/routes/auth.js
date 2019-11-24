@@ -6,8 +6,8 @@ router.get('/google', passport.authenticate('google', {scope: ['profile', 'email
 
 router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),(req, res) => {
+    console.log('login success 2');
     //res.redirect('/dashboard');
-    res.send('login success');
   });
 
-  module.exports = router;
+module.exports = router;
