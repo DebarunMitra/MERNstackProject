@@ -4,6 +4,9 @@ const mongoose=require('mongoose');
 
 const app=express();
 
+// Load Routes
+const auth = require('./routes/auth');
+
 //body parser middleware
 app.use(express.json());
 
@@ -15,6 +18,10 @@ const db=require('./config/keys').mongoURI;
 //db connection
 mongoose.connect(db, {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex:true})
 .then(()=>console.log('MongoDB connected...')).catch(err=>console.log('ERROR: '+err));
+
+
+// Use Routes
+app.use('/auth', auth);
 
 
 //set port
