@@ -1,13 +1,18 @@
-import React,{Component,useEffect} from 'react';
+import React,{Component} from 'react';
 import './App.css';
 import Header from './components/Header';
 import {BrowserRouter,Route} from 'react-router-dom';
 import Home from './components/Home';
 import Profile from './components/Profile';
-
+import {connect} from 'react-redux';
+import {fetchUserAction} from './actions/myactions';
 //    <NavBar />
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.fetch_user();
+  }
 
   render() {
     return (
@@ -21,4 +26,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispathToProps = (dispatch)=>{
+  return {
+    fetch_user:()=>{dispatch(fetchUserAction())}
+  }
+}
+
+export default connect(null,mapDispathToProps)(App);
