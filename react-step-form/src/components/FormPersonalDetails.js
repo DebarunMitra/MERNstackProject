@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import '../css/style.css';
 
 
 export class FormPersonalDetails extends Component{
@@ -21,7 +22,7 @@ export class FormPersonalDetails extends Component{
     return (
       <MuiThemeProvider>
           <React.Fragment>
-            <AppBar title="Enter Personal Details" />
+            <AppBar className="nav-bar" title="Enter Personal Details" />
             <TextField hintText="Enter Your City Name"
               floatingLabelText="City Name"
               onChange={handleChange('city')}
