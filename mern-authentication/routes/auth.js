@@ -6,8 +6,7 @@ router.get('/google', passport.authenticate('google', {scope: ['profile', 'email
 
 router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),(req, res) => {
-    //res.redirect('/dashboard');
-    res.redirect('/');
+    res.redirect('/profile');
   });
 
 
@@ -16,10 +15,10 @@ router.get('/google/callback',
     if(req.user){
       console.log('verify');
       console.log(req.user);
-      res.status(200).send(req.user);
+        res.status(200).send(req.user);
     } else {
       console.log('Not Auth');
-            res.status(401).send('Not Auth');
+        res.status(200);
     }
   });
 
