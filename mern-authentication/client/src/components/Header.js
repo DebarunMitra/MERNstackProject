@@ -10,17 +10,18 @@ render(){
             case null:
               return (
                 <React.Fragment>
-                  <li><a href="/auth/verify">loading</a></li>
-                  <li><a href="/auth/google">signup</a></li>
+                  <li><a href="/auth/verify">Loading</a></li>
+                  <li><a href="/auth/google">Sign Up</a></li>
                 </React.Fragment>
           );
             case false:
-                return  <li><a href="/auth/google">signup</a></li>
+                return  <li><a href="/auth/google">Sign Up</a></li>
             default:
                  return(
                      <React.Fragment>
-                       <li><a href="/auth/logout">logout</a></li>
-                       <li><Link to="/profile">profile</Link></li>
+                       <li><a href="/auth/logout">Logout</a></li>
+                       <li><Link to="/profile">Profile</Link></li>
+                       <li><Link to="/about">About</Link></li>
                      </React.Fragment>
                  )
         }
