@@ -4,6 +4,7 @@ import Header from './components/Header';
 import {BrowserRouter,Route} from 'react-router-dom';
 import Home from './components/Home';
 import Profile from './components/Profile';
+import About from './components/About';
 import {connect} from 'react-redux';
 import {fetchUserAction} from './actions/myactions';
 //    <NavBar />
@@ -19,7 +20,8 @@ class App extends Component {
       <BrowserRouter>
         <Header />
         <Route exact path="/" component={Home} />
-        <Route path="/profile" component={Profile} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/about" component={About} />
         <h6> WaterHut </h6>
       </BrowserRouter>
     );
