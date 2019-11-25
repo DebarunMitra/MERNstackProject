@@ -29,7 +29,7 @@ class App extends Component {
 const mapDispathToProps = (dispatch)=>{
   return {
     fetch_user:()=>{dispatch(fetchUserAction())}
-  }
+  };
 }
 
 export default connect(null,mapDispathToProps)(App);
