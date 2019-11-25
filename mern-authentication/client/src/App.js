@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Header />
-        <Route path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/profile" component={Profile} />
         <h6> WaterHut </h6>
       </BrowserRouter>
