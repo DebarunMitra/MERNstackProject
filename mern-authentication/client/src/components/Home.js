@@ -7,7 +7,7 @@ render(){
     <div className="card" style={{margin:"10%",padding:"20px",textAlign:"center"}}>
       <h4>I am home :)</h4>
       <div className="row">
-        <a className="waves-effect blue darken-4 btn" href="#">Sign Up with Google</a>
+        <a className="waves-effect blue darken-4 btn" href="/auth/google">Sign Up with Google</a>
       </div>
     </div>
 
