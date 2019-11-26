@@ -20,8 +20,8 @@ class App extends Component {
       <BrowserRouter>
         <Header />
         <Route exact path="/" component={Home} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/about" component={About} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/about" component={About} />
         <h6> WaterHut </h6>
       </BrowserRouter>
     );
@@ -29,6 +29,7 @@ class App extends Component {
 }
 
 const mapDispathToProps = (dispatch)=>{
+  console.log(dispatch);
   return {
     fetch_user:()=>{dispatch(fetchUserAction())}
   };
