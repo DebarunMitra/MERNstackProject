@@ -2,6 +2,17 @@ const express = require("express");
 const connectDB = require("./config/db");
 const app = express();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.use(express.urlencoded({extended:true}));
+
+//body parser middleware
+app.use(express.json());
+
 //DB Connection
 connectDB();
 app.get("/", (req, res) => res.send("Working"));
