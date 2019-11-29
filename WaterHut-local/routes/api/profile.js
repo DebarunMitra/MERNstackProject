@@ -27,7 +27,7 @@ router.get('/me', auth, async (req, res) => {
             });
         }
 
-        res.json(profile);
+        res.status(200).json(profile);
 
     } catch (err) {
         console.erroe(err.message);
