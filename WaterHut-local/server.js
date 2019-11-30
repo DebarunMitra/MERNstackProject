@@ -28,6 +28,10 @@ app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
 app.use("/api/consumers", require("./routes/api/consumers"));
+app.use("/api/conserve", require("./routes/api/conserve"));
+
+
+
 
 const PORT = process.env.PORT || 5020;
 app.listen(PORT, () => console.log(`Server running @ ${PORT}`));
